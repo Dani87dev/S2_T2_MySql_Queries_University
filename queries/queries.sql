@@ -46,15 +46,19 @@ SELECT persona.apellido1, persona.apellido2, persona.nombre FROM persona LEFT JO
 
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
+SELECT asignatura.id, asignatura.nombre FROM asignatura LEFT JOIN profesor ON asignatura.id_profesor = profesor.id_profesor WHERE profesor.id_profesor IS NULL;
 
 
 -- 15. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar. (nombre)
+SELECT DISTINCT departamento.nombre FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor WHERE asignatura.id IS NULL;
 
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
+SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno';
 
 
 -- 17. Calcula quants alumnes van néixer en 1999. (total)
+SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
 
 
 -- 18. Calcula quants professors/es hi ha en cada departament. El resultat només ha de mostrar dues columnes, una amb el nom del departament i una altra amb el nombre de professors/es que hi ha en aquest departament. El resultat només ha d'incloure els departaments que tenen professors/es associats i haurà d'estar ordenat de major a menor pel nombre de professors/es. (departamento, total)
