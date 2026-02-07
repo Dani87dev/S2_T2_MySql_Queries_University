@@ -2,7 +2,7 @@
 
 
 ## 📈 Resumen
-✅ 6 correctas de 8 queries
+✅ 7 correctas de 9 queries
 
 ## ✅ Query 1: Correcto
 
@@ -27,7 +27,7 @@
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -41,7 +41,7 @@
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.40 ms
+⏱ Tiempo: 0.38 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
 
 ---
@@ -50,6 +50,13 @@
 - **Descripción**: 1054 (42S22): Unknown column 'perosna.id' in 'on clause'
 
 
-## ❌ Query 8: Error
+## ✅ Query 8: Correcto
+
+⏱ Tiempo: 0.42 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
+
+---
+
+## ❌ Query 9: Error
 - **Descripción**: 'NoneType' object is not iterable
 
