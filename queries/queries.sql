@@ -34,6 +34,7 @@ SELECT departamento.nombre AS departamento, persona.apellido1, persona.apellido2
 
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
+SELECT persona.apellido1, persona.apellido2, persona.nombre FROM persona LEFT JOIN profesor ON profesor.id_profesor = persona.id WHERE persona.tipo = 'profesor' AND profesor.id_profesor IS NULL ORDER BY persona.apellido1, persona.apellido2, persona.nombre;
 
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
