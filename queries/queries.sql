@@ -21,7 +21,7 @@ persona.nombre,
 departamento.nombre AS departamento
 FROM  persona
 JOIN  profesor
-	ON  profesor.id_profesor = persona-id
+	ON  profesor.id_profesor = persona.id
 JOIN departamento
 	ON departamento.id = profesor.id_departamento
 ORDER BY
